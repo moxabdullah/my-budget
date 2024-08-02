@@ -1,9 +1,9 @@
-import BudgetCalculator from '@/app/components/BudgetCalculator'
+import BudgetApp from '@/components/features/BudgetApp';
 
 export default function Home() {
   return (
     <main>
-      <BudgetCalculator />
+    <BudgetApp />
     </main>
   );
 }

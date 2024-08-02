@@ -2,11 +2,11 @@
 
 import React, { useState } from 'react';
 import { PlusCircle, MinusCircle, DollarSign } from 'lucide-react';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 
-const BudgetCalculator = () => {
+const BudgetCalculator = ({ selectedMonth }) => {
   const [income, setIncome] = useState('');
   const [expenses, setExpenses] = useState([{ name: '', amount: '' }]);
   const [total, setTotal] = useState({ income: 0, expenses: 0, balance: 0 });
@@ -46,7 +46,9 @@ const BudgetCalculator = () => {
     <div className="max-w-md mx-auto p-4">
       <Card className="mb-4">
         <CardHeader>
-          <CardTitle>Budget Calculator</CardTitle>
+          <CardTitle>
+            {selectedMonth ? `${selectedMonth} Budget` : 'Budget Calculator'}
+          </CardTitle>
         </CardHeader>
         <CardContent>
           <div className="mb-4">
@@ -92,7 +94,9 @@ const BudgetCalculator = () => {
       </Card>
       <Card>
         <CardHeader>
-          <CardTitle>Budget Summary</CardTitle>
+          <CardTitle>
+            {selectedMonth ? `${selectedMonth} Budget Summary` : 'Budget Summary'}
+          </CardTitle>
         </CardHeader>
         <CardContent>
           <p>Total Income: ${total.income.toFixed(2)}</p>
