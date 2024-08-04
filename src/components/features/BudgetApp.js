@@ -1,9 +1,9 @@
 'use client';
 
 import React, { useState } from 'react';
-import MonthlyCalendar from '@/components/features/MonthlyCalendar';
-import BudgetCalculator from '@/components/features/BudgetCalculator';
-import { Button } from "@/components/ui/button";
+import MonthlyCalendar from './MonthlyCalendar';
+import BudgetCalculator from './BudgetCalculator';
+import { Button } from "../ui/button";
 
 const BudgetApp = () => {
   const [selectedMonth, setSelectedMonth] = useState(null);
